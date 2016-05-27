@@ -1,8 +1,11 @@
+/* The initial text shown in the textarea by default. */
+var initialText = "Heading\n=======\n\nSub-heading\n-----------\n\n### Another deeper heading\n\nParagraphs are separated\nby a blank line.\n\nLeave 2 spaces at the end of a line to do a  \nline break\n\nText attributes *italic*, **bold**, \n`monospace`, ~~strikethrough~~ . \nShopping list:\n\n  * apples\n  * oranges\n  * pears\n\nNumbered list:\n\n  1. apples\n  2. oranges\n  3. pears\n\nThe rain---not the reign---in \nSpain. \n\n *[Herman Fassett](https://freecodecamp.com/hermanfassett)*"
+
 /* ContainerArea component, the parent component of the text input and output. */
 var ContainerArea = React.createClass ({
-	/* input propoerty added to this.state. It holds the text that will go into the results area. Initially set to an empty string. */
+	/* input propoerty added to this.state. It holds the text that will go into the results area. Initially set to the default text in initialText. */
 	getInitialState: function() {
-		return {input: ""};
+		return {input: initialText};
 	},
 	/* This methods is called from TextArea whenever a change is made in the textarea. */
 	handleChange: function(data) {
@@ -28,12 +31,13 @@ var TextArea = React.createClass ({
 	textChange: function(e) {
 		this.props.onChange(e.target.value);
 	},
-	/* textarea calls textChange method when the text changes. */
+	/* textarea calls textChange method when the text changes.
+	The default value to appear in the textarea in the text in initialText. */
 	render: function() {
 		return (
 			<div className="text-area">
 				<h2>Enter text here</h2>
-				<textarea className="text-box" onChange={this.textChange}></textarea>
+				<textarea className="text-box" onChange={this.textChange} defaultValue={initialText}></textarea>
 			</div>
 		);
 	}
@@ -60,3 +64,4 @@ var ResultArea = React.createClass ({
 
 /* Renders ContainerArea and places it container div. */
 ReactDOM.render(<ContainerArea />, document.getElementById("container"));
+
