@@ -2,9 +2,8 @@ var ContainerArea = React.createClass ({
 	getInitialState: function() {
 		return {input: ""};
 	},
-	handleChange: function() {
-		this.setState({input: "TEXT CHANGED"});
-		console.log(this.state.input);
+	handleChange: function(data) {
+		this.setState({input: data});
 	},
 	render: function() {
 		return (
@@ -17,11 +16,14 @@ var ContainerArea = React.createClass ({
 });
 
 var TextArea = React.createClass ({
+	textChange: function(e) {
+		this.props.onChange(e.target.value);
+	},
 	render: function() {
 		return (
 			<div className="text-area">
 				<h2>Enter text here</h2>
-				<textarea className="text-box" onChange={this.props.onChange}></textarea>
+				<textarea className="text-box" onChange={this.textChange}></textarea>
 			</div>
 		);
 	}
