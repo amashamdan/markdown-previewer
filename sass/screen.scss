@@ -2,5 +2,34 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@mixin main {
+	font-family: "arial";
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1000px;
+}
 
-@import "compass/reset";
+#container {
+	@include main;
+	box-sizing: border-box;
+}
+
+@mixin area {
+	float: left;
+	width: 50%;
+	text-align: center;
+}
+
+.text-area, .result-area {
+	@include area;
+}
+
+.text-box {
+	width: 100%;
+	height: 100%;
+}
+
+.footer {
+	clear: both;
+	@include main;
+}
