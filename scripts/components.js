@@ -30,11 +30,15 @@ var TextArea = React.createClass ({
 })
 
 var ResultArea = React.createClass ({
+	rawMarkup: function() {
+		var rawMarkup = marked(this.props.text.toString(), {sanitize: true});
+    	return { __html: rawMarkup };
+	},
 	render: function() {
 		return (
 			<div className="result-area">
 				<h2>Result</h2>
-				<p>{this.props.text}</p>
+				<span dangerouslySetInnerHTML={this.rawMarkup()} />
 			</div>
 		);
 	}
