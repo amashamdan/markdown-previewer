@@ -1,6 +1,6 @@
-Markup Previwer
+Markdown Previwer
 ===========================================================
-Welcome to Markup Previewer, a Free Code Camp project.
+Welcome to Markdown Previewer, a Free Code Camp project.
 It features a simple markup previewer using React.js and marked library.
 
 How to use
