@@ -4,28 +4,32 @@
 	<meta charset="UTF-8">
 	<title>Markup Previewer</title>
 	<link rel="stylesheet" href="stylesheets/screen.css" />
+	<!-- The following three lines place calls to react, react-dom and babel. -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.16/browser.js"></script>
+    <!-- Call to jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <!-- Call to marked library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
 </head>
 <body>
+	<!-- Main cintainer div, it will has react components -->
 	<div id="container">
 	</div>
+	<!-- Footer section, includes author's info and links. -->
 	<div class="footer">
-	<!-- Author's information -->
-	<div class="author">
-		<p>Page by Amer Hamdan</p>
-		<p>Visit my pages:</p>
-		<ul class="pages">
-			<li><p><a href="http://amashamdan.github.io/P1-portfolio/" target="blank">Portfolio</a></p></li>
-			<li><p><a href="https://github.com/amashamdan" target="blank">Github</a></p></li>
-			<li><p><a href="http://codepen.io/amashamdan/" target="blank">CodePen</a></p></li>
-			<li><p><a href="https://www.linkedin.com/in/amerhamdan" target="blank">Linkedin</a></p></li>
-		</ul>
+		<div class="author">
+			<p>Page by Amer Hamdan</p>
+			<p>Visit my pages:</p>
+			<ul class="pages">
+				<li><p><a href="http://amashamdan.github.io/P1-portfolio/" target="blank">Portfolio</a></p></li>
+				<li><p><a href="https://github.com/amashamdan" target="blank">Github</a></p></li>
+				<li><p><a href="http://codepen.io/amashamdan/" target="blank">CodePen</a></p></li>
+				<li><p><a href="https://www.linkedin.com/in/amerhamdan" target="blank">Linkedin</a></p></li>
+			</ul>
+		</div>
 	</div>
-</div>
 	<script type="text/babel" src="scripts/components.js"></script>
 </body>
 </html>
